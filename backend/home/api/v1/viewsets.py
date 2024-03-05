@@ -1,6 +1,20 @@
 from rest_framework import viewsets
-from home.models import Hobby, Hobby, Hobby
-from .serializers import HobbySerializer, HobbySerializer, HobbySerializer
+from home.models import (
+    Hobby,
+    TestManyToMany,
+    Hobby,
+    TestManyToMany,
+    Hobby,
+    TestManyToMany,
+)
+from .serializers import (
+    HobbySerializer,
+    TestManyToManySerializer,
+    HobbySerializer,
+    TestManyToManySerializer,
+    HobbySerializer,
+    TestManyToManySerializer,
+)
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -41,3 +55,12 @@ class HobbyViewSet(viewsets.ModelViewSet):
         authentication.TokenAuthentication,
     )
     queryset = Hobby.objects.all()
+
+
+class TestManyToManyViewSet(viewsets.ModelViewSet):
+    serializer_class = TestManyToManySerializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = TestManyToMany.objects.all()

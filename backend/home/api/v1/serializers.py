@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from home.models import Hobby, Hobby
+from home.models import Hobby, TestManyToMany, Hobby, TestManyToMany
 from django.http import HttpRequest
 from django.utils.translation import gettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -79,4 +79,10 @@ class PasswordSerializer(PasswordResetSerializer):
 class HobbySerializer(serializers.ModelSerializer):
     class Meta:
         model = Hobby
+        fields = "__all__"
+
+
+class TestManyToManySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TestManyToMany
         fields = "__all__"

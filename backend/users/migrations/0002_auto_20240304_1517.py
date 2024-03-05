@@ -5,26 +5,33 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('home', '0002_hobby'),
-        ('users', '0001_initial'),
+        ("home", "0002_hobby"),
+        ("users", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='user',
-            name='rel_hobby_1_n',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='user_rel_hobby_1_n', to='home.hobby'),
+            model_name="user",
+            name="rel_hobby_1_n",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="user_rel_hobby_1_n",
+                to="home.hobby",
+            ),
         ),
         migrations.AlterField(
-            model_name='user',
-            name='first_name',
-            field=models.CharField(blank=True, max_length=150, verbose_name='first name'),
+            model_name="user",
+            name="first_name",
+            field=models.CharField(
+                blank=True, max_length=150, verbose_name="first name"
+            ),
         ),
         migrations.AlterField(
-            model_name='user',
-            name='name',
+            model_name="user",
+            name="name",
             field=models.CharField(blank=True, max_length=255, null=True),
         ),
     ]

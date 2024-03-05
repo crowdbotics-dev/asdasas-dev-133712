@@ -25,8 +25,8 @@ class User(AbstractUser):
     )
     rel_hobby_1_n = models.ForeignKey(
         "home.Hobby",
-        blank=True,
         null=True,
+        blank=True,
         on_delete=models.CASCADE,
         related_name="user_rel_hobby_1_n",
     )
