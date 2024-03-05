@@ -32,6 +32,24 @@ function api_v1_login_create(payload) {
 function api_v1_signup_create(payload) {
   return asdasasdevAPI.post(`/api/v1/signup/`, payload)
 }
+function api_v1_testmanytomany_list(payload) {
+  return asdasasdevAPI.get(`/api/v1/testmanytomany/`)
+}
+function api_v1_testmanytomany_create(payload) {
+  return asdasasdevAPI.post(`/api/v1/testmanytomany/`, payload)
+}
+function api_v1_testmanytomany_retrieve(payload) {
+  return asdasasdevAPI.get(`/api/v1/testmanytomany/${payload.id}/`)
+}
+function api_v1_testmanytomany_update(payload) {
+  return asdasasdevAPI.put(`/api/v1/testmanytomany/${payload.id}/`, payload)
+}
+function api_v1_testmanytomany_partial_update(payload) {
+  return asdasasdevAPI.patch(`/api/v1/testmanytomany/${payload.id}/`, payload)
+}
+function api_v1_testmanytomany_destroy(payload) {
+  return asdasasdevAPI.delete(`/api/v1/testmanytomany/${payload.id}/`)
+}
 function rest_auth_login_create(payload) {
   return asdasasdevAPI.post(`/rest-auth/login/`, payload)
 }
@@ -75,6 +93,12 @@ export const apiService = {
   api_v1_hobby_destroy,
   api_v1_login_create,
   api_v1_signup_create,
+  api_v1_testmanytomany_list,
+  api_v1_testmanytomany_create,
+  api_v1_testmanytomany_retrieve,
+  api_v1_testmanytomany_update,
+  api_v1_testmanytomany_partial_update,
+  api_v1_testmanytomany_destroy,
   rest_auth_login_create,
   rest_auth_logout_create,
   rest_auth_password_change_create,
